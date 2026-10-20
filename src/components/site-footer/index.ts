@@ -1,6 +1,8 @@
+import html from "./index.html?raw";
+
 class SiteFooter extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = "<footer><p>Vanilla GSAP</p></footer>";
+    this.innerHTML = html;
   }
 }
 

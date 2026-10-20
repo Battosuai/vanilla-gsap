@@ -16,4 +16,14 @@ export default defineConfig({
     template: ({ entryName }) => `./src/pages/${entryName}/index.html`,
   },
   source: { entry },
+  tools: {
+    // `import html from "./x.html?raw"` gives the file as a string.
+    rspack: {
+      module: {
+        rules: [
+          { test: /\.html$/, resourceQuery: /raw/, type: "asset/source" },
+        ],
+      },
+    },
+  },
 });
